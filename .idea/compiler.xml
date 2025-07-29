@@ -7,11 +7,23 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Swagger_Doc" />
+        <module name="Schedule_Task" />
+      </profile>
+      <profile name="Annotation profile for File_Uploader" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="File_Uploader" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="File_Uploader" options="-parameters" />
+      <module name="Schedule_Task" options="-parameters" />
       <module name="Swagger_Doc" options="-parameters" />
     </option>
   </component>
